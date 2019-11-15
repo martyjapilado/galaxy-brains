@@ -13,7 +13,8 @@
   <meta name="author" content="">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <!-- Custom fonts for this theme -->
+  <!-- Custom fonts and icons for this theme -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -37,11 +38,14 @@
       <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="mainNav"/>
 
       <a class="navbar-brand" href={% url 'index' %}><img src="../static/images/logo.png" width="75px" height="75px" style="margin-right: 10px"/>The Scholar System</a>
+      <a class="navbar-brand nav-item" href="{% url 'projectList' %}">Project List</a>
       {% if loggedin %}
+      {% if role == 'teacher' %}
       <a class="navbar-brand nav-item" href={% url 'createproject' %}>Create Project</a>
+      {% endif %}
       <a class="navbar-brand nav-link ml-auto"  href={% url 'logoutsubmit' %} >LOGOUT</a>
       {% else %}
-      <a class="navbar-brand nav-item" style="float: right;" href={% url 'signup' %} >Sign Up</a>
+      <a class="navbar-brand nav-item ml-auto" style="float: right;" href={% url 'signup' %} >Sign Up</a>
       {% endif %}
       </nav>
     </div>
