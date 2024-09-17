@@ -1,14 +1,31 @@
 #mainNav {
   background-color: #085631;
   font-family: Podkova, Serif;
+}
+
+.landing-page-menu-item {
+  background: #2cff41;
 
 }
 
+.landing-page-menu-item:hover {
+  cursor: pointer;
+  background: #3da700;
+  font-weight: bold;
+}
 
+.light-green {
+  color: #4caf50;
+}
+
+.about-text {
+  font-family: Podkova, Serif;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 .sign-in-box {
   padding-top: 15px;
   margin-right: 15px ;
-  padding-left: 10px; 
+  padding-left: 10px;
 font-family: Coda;
 font-style: normal;
 font-weight: normal;
@@ -35,8 +52,8 @@ line-height: 20px;
   background-size: cover;
 }
 
-.card {
-  position: absolute;
+.card-login {
+  position: relative;
   height: 370px;
   margin-top: 500px;
   margin-bottom: auto;
@@ -44,8 +61,22 @@ line-height: 20px;
   background: rgba(136, 255, 133, 0.24);
 }
 
+.card-project {
+  position: relative;
+  height: 370px;
+  margin: 25px;
+  margin-bottom: auto;
+  width: 400px;
+  background: rgba(136, 255, 133, 0.24);
+}
+
+.card-project:hover {
+  background: rgba(0, 194, 109, 0.73);
+
+}
+
 .card-header{
-  border: none;
+  border: midnightblue;
   background-color: transparent;
 }
 
@@ -110,19 +141,7 @@ background-color: white;
   line-height: 34px;
 }
 
-.rectangle {
-  position: absolute;
-  width: 136px;
-  height: 100px;
-
-  background: #FFFFFF;
-  border: 1px ;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.create-page-form {
-  positon: absolute;
+.linear-matter {
   position: relative;
   width: auto;
   height: 900px;
@@ -155,5 +174,53 @@ small {
     z-index: 40;
     bottom: 0;
     margin-bottom: -15px;
-
 }
+
+
+footer {
+  background-color: #085631;
+}
+
+.text-white {
+  color: white;
+  border-color: white;
+}
+
+.form-container {
+  position: relative;
+  height: auto;
+  width: auto;
+  padding: 100px;
+  margin-left: 100px;
+}
+
+.breath-check {
+margin: 15px;
+}
+
+.form-box {
+  box-shadow: #085631;
+  background: linear-gradient(0.4deg, rgba(192, 254, 224, 0) 0.33%, rgba(99, 255, 189, 0.65) 77.73%);
+}
+
+.filler {
+  background: linear-gradient(0.4deg, rgba(192, 254, 224, 0) 0.33%, rgba(99, 255, 189, 0.65) 77.73%);
+}
+
+.tag-button {
+  background-color: lightseagreen;
+}
+
+.tag-button:hover {
+  background-color: blue;
+}
+
+.first-nav-item {
+  margin-left: 60px;
+}
+
+.logo {
+  width: 10px;
+  height: 10px;
+}
+

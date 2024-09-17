@@ -2,6 +2,90 @@
 
 {% block content %}
 
-Test
+<div style="background: linear-gradient(0.4deg, rgba(192, 254, 224, 0) 0.33%, rgba(99, 255, 189, 0.65) 77.73%); padding-top: 10px">
+    <div class="container" style="margin-top: 8%; margin-left: 43%; margin-bottom: 25px" >
+        <img src="../static/images/logo.png" width="150px" height="150px" />
+    </div>
+<div class="container" style="margin-bottom: 10px; margin-left: 30%;">
+
+    <div class="list-group list-group-horizontal-sm shadow" style="margin-right:50%; cursor: pointer">
+        <a class="landing-page-menu-item list-group-item list-group-item-action" onclick="location.href='../'"><ion-icon name="home"></ion-icon>Home</a>
+        <a class="landing-page-menu-item list-group-item list-group-item-action " onclick="location.href='../projectlisting'"><ion-icon name="list-box"></ion-icon>Project List</a>
+	{% if role == 'admin' %}
+        <a class="landing-page-menu-item list-group-item list-group-item-action"onclick="location.href='{% url "potentialProjectsList" %}'"><ion-icon name="list-box"></ion-icon>Potential Projects List</a>
+	{% endif %}
+	{% if role == 'teacher' or role == 'admin'%}
+        <a class= "landing-page-menu-item list-group-item list-group-item-action " onclick="location.href='{% url "createproject" %}' "><ion-icon name="star"></ion-icon>Create a Project</a>
+	{% endif %}
+    </div>
+</div>
+<div class="container">
+
+    <div class="jumbotron about-text">
+        <h1 class="display-4">Scholar System</h1>
+        <p class="lead">This is a hub designed to educate and provide resources
+            for communities to take part in sustainability projects in accordance with the Aloha+ standards. Projects listed below
+            are a few hand-selceted projects from each grade level. Click the blue button below their description to learn more.</p>
+        <hr class="my-4">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </div>
+</div>
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm" style="padding-bottom: 50px;">
+                <div class="card-header">
+                    <h3>Elementary School</h3>
+                </div>
+		{% for i in recentschools.elementary %}
+                <div class="card-project" style="width: 18rem;">
+                    <div class="card-body">
+			<h5 class="card-title">{{ i.name }}<br></h5>
+                        <p class="card-text">{{ i.description }}</p> <a href=../projectpage/erase-the-wastepollution-solution class="btn btn-primary">More info</a>
+                    </div>
+                </div>
+		{% endfor %}
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm" style="padding-bottom: 50px;">
+                <div class="card-header">
+                    <h3>Middle School</h3>
+                </div>
+		{% for i in recentschools.middle %}
+                <div class="card-project" style="width: 18rem;">
+                    <div class="card-body">
+			<h5 class="card-title">{{ i.name }}<br></h5>
+                        <p class="card-text">{{ i.description }}</p> <a href=../projectpage/erase-the-wastepollution-solution class="btn btn-primary">More info</a>
+                    </div>
+                </div>
+		{% endfor %}
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm" style="padding-bottom: 50px;">
+                <div class="card-header">
+                    <h3>High School</h3>
+                </div>
+		{% for i in recentschools.high %}
+                <div class="card-project" style="width: 18rem;">
+                    <div class="card-body">
+			<h5 class="card-title">{{ i.name }}<br></h5>
+                        <p class="card-text">{{ i.description }}</p> <a href=../projectpage/erase-the-wastepollution-solution class="btn btn-primary">More info</a>
+                    </div>
+                </div>
+		{% endfor %}
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+
 
 {% endblock %}
